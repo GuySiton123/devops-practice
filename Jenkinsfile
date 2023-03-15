@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'localhost'
+        label any
     }
     stages {
         stage('Checkout') {
