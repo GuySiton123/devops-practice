@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'guy_github', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
+                
                 checkout([$class: 'GitSCM',
                           branches: [[name: '*/main']],
                           doGenerateSubmoduleConfigurations: false,
@@ -11,7 +11,7 @@ pipeline {
                           submoduleCfg: [],
                           userRemoteConfigs: [[url: 'https://github.com/GuySiton123/devops-practice.git', 
 					       credentialsId: 'guy_github']]])
-              }
+              
             }
         }
         stage('Build') {
