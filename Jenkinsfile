@@ -10,7 +10,8 @@ pipeline {
                           extensions: [],
                           submoduleCfg: [],
                           userRemoteConfigs: [[url: 'https://github.com/GuySiton123/devops-practice.git', 
-					       credentialsId: 'guy_github']]])
+					       username: ${GIT_USERNAME},
+					       password: ${GIT_PASSWORD}]]])
               }
             }
         }
