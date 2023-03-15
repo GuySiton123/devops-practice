@@ -25,6 +25,7 @@ pipeline {
                 sh 'docker container stop flask-container'
                 sh 'docker container rm flask-container'
             }
+        }
         stage('Deploy') {
             steps {
                 sh 'echo "Deploying..."'
