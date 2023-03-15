@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                
+                withCredentials([usernamePassword(credentialsId: 'guy_github', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
                 checkout([$class: 'GitSCM',
                           branches: [[name: '*/main']],
                           doGenerateSubmoduleConfigurations: false,
@@ -13,7 +13,6 @@ pipeline {
 					       username: ${GIT_USERNAME},
 					       password: ${GIT_PASSWORD}]]])
               }
-					       credentialsId: 'guy_github']]])
             }
         }
         stage('Build') {
